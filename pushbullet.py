@@ -6,7 +6,6 @@
 # https://docs.pushbullet.com/v2/pushes/
 
 import sys
-import os
 import json
 import requests as r
 
