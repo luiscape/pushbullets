@@ -14,14 +14,14 @@ key = 'API_KEY'
 
 # function to build the alert message that will
 # be sent to the team.
-def buildMessage(rev_id):
+def buildMessage(rev_id, test = False):
 
 	# collect the data message that needs to
 	# be sent
 
-	# id
-	# rev_id = sw.sqlite.get_var('latest_id')
-	rev_id = '6d57ddaa-b447-4659-a987-e08011a30895'
+	if test == True:
+		# rev_id = sw.sqlite.get_var('latest_id')
+		rev_id = '6d57ddaa-b447-4659-a987-e08011a30895'
 
 	# getting information about the revision
 	# in question
