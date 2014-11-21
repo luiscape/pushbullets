@@ -68,17 +68,17 @@ def sendAlert(rev_id):
 # collecting parameters from the command line
 if __name__ == '__main__':
     if len(sys.argv) <= 1:
-        usage = '''python scripts/script.py {api-key}
+        usage = '''python scripts/script.py {revision_id}
 
 				e.g.
 
-				python scripts/script.py API-KEY
+				python scripts/script.py 6d57ddaa-b447-4659-a987-e08011a30895
 				'''
         print(usage)
         sys.exit(1)
 
-    # collectig the API key from
-    # command line and passing it to the
-    # sendAlert function
+    # collecting the revision id from
+    # the command line interface
+    # and passing to the sendAlert function
     rev_id = sys.argv[1]
     sendAlert(rev_id)
