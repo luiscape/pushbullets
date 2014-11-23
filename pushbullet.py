@@ -12,9 +12,9 @@ import requests as r
 # for now you have to use Luis Capelo's API key. Ask him.
 key = 'API_KEY'
 
-# function to build the alert message that will
-# be sent to the team.
-def buildMessage(rev_id):
+# main function to build the payload
+# for sending a send alert
+def buildPayload(rev_id):
 
 	# getting information about the revision
 	# in question
@@ -42,14 +42,14 @@ def buildMessage(rev_id):
 	# returning results
 	return payload
 
-
+# main alerting function
 def sendAlert(rev_id):
 
 	# defining authorization
 	key_string = "Bearer " + key
 	headers = {'content-type': 'application/json', "Authorization": key_string }
 
-	payload = buildMessage(rev_id)
+	payload = buildPayload(rev_id)
 
 	# sending notification
 	r.post('https://api.pushbullet.com/v2/pushes',
