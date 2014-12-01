@@ -14,7 +14,7 @@ key = 'API_KEY'
 
 # main function to build the payload
 # for sending a send alert
-def buildPayload(rev_id):
+def buildPayload(channel):
 
 	# getting information about the revision
 	# in question
@@ -37,7 +37,7 @@ def buildPayload(rev_id):
 	update_url = 'https://data.hdx.rwlabs.org/dataset/' + dataset_name
 
 	# building payload
-	payload = {"type": "link", "title": title, "body": body, "url": update_url, "channel_tag": "dataset_alerts"}
+	payload = {"type": "note", "title": title, "body": body, "url": update_url, "channel_tag": "dataset_alerts"}
 
 	# returning results
 	return payload
@@ -60,11 +60,11 @@ def sendAlert(rev_id):
 # collecting parameters from the command line
 if __name__ == '__main__':
     if len(sys.argv) <= 1:
-        usage = '''python scripts/script.py {revision_id}
+        usage = '''python scripts/script.py {payload} {channel} {revision_id}
 
 				e.g.
 
-				python scripts/script.py 6d57ddaa-b447-4659-a987-e08011a30895
+				python scripts/script.py "" "hdx-dev"
 				'''
         print(usage)
         sys.exit(1)
