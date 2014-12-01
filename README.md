@@ -17,6 +17,7 @@ import pushbullet
 # Buidling the parameters
 title = "Dataset Edited"
 body = "The dataset Ebola Cases in West Africa was just edited by Luis Capelo (luiscape)."
+channel = "hdx-dev"  # Specify what channel
 
 # Passing them to the sednAlert() function
 pushbullet.sendAlert(title, body, channel)
