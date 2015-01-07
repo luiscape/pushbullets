@@ -14,4 +14,4 @@ payload = {"type": "link", "title": "WHO updated EVD data", "body": "WHO just up
 # Use the sendAlert function to send an alert
 # to all subscribers. You'll need to pass a
 # payload and the HDX API key.
-pushbullet.sendAlert(pushbullet_key, payload)
+pushbullet.sendAlert(key=hdx_key, payload=payload)
